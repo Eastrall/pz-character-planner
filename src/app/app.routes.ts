@@ -3,6 +3,11 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    loadChildren: async () => (await import('./pages/home')).routes
+    redirectTo: 'builder',
+    pathMatch: 'full'
+  },
+  {
+    path: 'builder',
+    loadChildren: async () => (await import('./pages/builder')).routes
   }
 ];

@@ -2,3 +2,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dark {
+  color-scheme: dark;
+}
+
+@layer base {
+
+  main {
+    @apply bg-slate-50 dark:bg-slate-900 dark:text-white;
+  }
+
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+}

@@ -6,7 +6,7 @@ import { heroMoonSolid } from '@ng-icons/heroicons/solid';
 import { heroSun }from '@ng-icons/heroicons/outline';
 import { simpleGithub } from '@ng-icons/simple-icons';
 
-import { NavBarComponent, NavBarButtonComponent } from './shared/components/ui/navbar';
+import { NavBarComponent, NavBarButtonComponent } from '@shared/components/ui/navbar';
 import { ThemeService } from './services';
 
 @Component({
