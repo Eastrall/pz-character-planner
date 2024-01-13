@@ -1,8 +1,8 @@
-name: Build and Deploy pull request
+name: Build
 
 on:
-  pull_request:
-    branches: [ "**" ]
+  push:
+    branches: [ "main" ]
 
 env:
   NODE_VERSION: 18.x
