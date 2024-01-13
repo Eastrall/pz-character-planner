@@ -1,11 +1,11 @@
 <header>
   <app-navbar>
-    <a appNavBarButton id="github-repository" href="https://github.com/Eastrall/pz-character-planner" target="_blank">
-      <i appIcon name="code-bracket" class="h-6 w-6 fill-slate-900 dark:text-white"></i>
+    <a appNavBarButton id="github-repository" href="https://github.com/Eastrall/pz-character-planner" target="_blank" class="w-11 h-11">
+      <ng-icon name="simpleGithub" size="24" class="fill-slate-900 dark:text-white" />
     </a>
     <button type="button" appNavBarButton (click)="toggleTheme()">
-      <span appIcon name="sun" class="w-6 h-6 hidden dark:block text-white"></span>
-      <span appIcon name="moon" kind="solid" class="w-6 h-6 block dark:hidden"></span>
+      <ng-icon name="heroSun" size="24" class="!hidden dark:!block text-white" />
+      <ng-icon name="heroMoonSolid" size="24" class="!block dark:!hidden" />
     </button>
   </app-navbar>
 </header>

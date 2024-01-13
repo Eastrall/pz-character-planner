@@ -1,9 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { NgIconComponent, provideIcons } from '@ng-icons/core';
+import { heroMoonSolid } from '@ng-icons/heroicons/solid';
+import { heroSun }from '@ng-icons/heroicons/outline';
+import { simpleGithub } from '@ng-icons/simple-icons';
 
 import { NavBarComponent, NavBarButtonComponent } from './shared/components/ui/navbar';
-import { IconComponent } from './shared/components/ui/icon';
 import { ThemeService } from './services';
 
 @Component({
@@ -14,7 +17,10 @@ import { ThemeService } from './services';
     RouterOutlet,
     NavBarComponent,
     NavBarButtonComponent,
-    IconComponent
+    NgIconComponent
+  ],
+  providers: [
+    provideIcons({ heroMoonSolid, heroSun, simpleGithub })
   ],
   templateUrl: './app.component.html'
 })

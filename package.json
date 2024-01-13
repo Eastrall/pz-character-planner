@@ -20,6 +20,9 @@
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/router": "^17.0.0",
+    "@ng-icons/core": "^26.3.0",
+    "@ng-icons/heroicons": "^26.3.0",
+    "@ng-icons/simple-icons": "^26.3.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
