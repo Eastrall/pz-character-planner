@@ -1,6 +1,6 @@
 <ul class="mt-6 pr-2 overflow-y-auto">
   @for (occupation of occupations; track occupation.id) {
-    <li class="hover:bg-slate-100 dark:hover:bg-slate-700 flex items-center h-16 rounded-md my-2 cursor-pointer">
+    <li class="hover:bg-slate-100 dark:hover:bg-slate-700 flex items-center h-16 rounded-md my-2 cursor-pointer gap-2" (click)="selected.emit(occupation)">
       <i className="w-16 h-16 mx-2">
         @if (occupation.icon) {
           <img src="assets/images/occupations/{{occupation.icon}}" width="64" height="64" />
@@ -9,7 +9,9 @@
           <div class="w-16 h-16"></div>
         }
       </i>
-      {{ occupation.name }}
+      <span>
+        {{ occupation.name | translate }}
+      </span>
     </li>
   }
 </ul>
