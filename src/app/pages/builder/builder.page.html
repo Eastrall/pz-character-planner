@@ -3,18 +3,20 @@
     <h2 class="font-medium">
       {{ 'occupation' | translate }}
     </h2>
-    <app-occupations-list class="overflow-y-auto" (selected)="onOccupationSelected($event)" />
+    <app-occupations-list class="overflow-y-auto" [selected]="occupation" (selectedChange)="onOccupationSelected($event)" />
   </div>
   <div class="flex flex-col p-8 w-full bg-white shadow-md border dark:border-none dark:bg-slate-800 rounded-lg">
     <div class="flex flex-col h-1/2">
       <h2 class="text-xl font-medium">
         {{ 'traits.positive.title' | translate }}
       </h2>
+      <app-positive-traits-list />
     </div>
     <div class="flex flex-col h-1/2">
       <h2 class="text-xl font-medium">
         {{ 'traits.negative.title' | translate }}
       </h2>
+      <app-negative-traits-list />
     </div>
   </div>
   <div class="flex flex-col p-8 w-full bg-white shadow-md border dark:border-none dark:bg-slate-800 rounded-lg">
