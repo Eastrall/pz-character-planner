@@ -1,0 +1,23 @@
+<ul class="mt-4 pr-2">
+  @for (trait of traits; track trait.id) {
+    <li class="flex items-center h-8 rounded-md my-1 px-2 hover:bg-slate-100 dark:hover:bg-slate-700">
+      <img src="assets/images/traits/{{trait.icon}}" width="16" height="16" />
+      <div class="flex justify-between w-full ml-3">
+        <div>{{trait.name | translate}}</div>
+
+        <div [ngClass]="{
+          'font-bold': true,
+          'text-red-500': trait.points < 0,
+          'text-green-500': trait.points > 0
+        }">
+          @if (trait.points > 0) {
+          +{{trait.points}}
+          }
+          @else {
+            {{trait.points}}
+          }
+        </div>
+      </div>
+    </li>
+  }
+</ul>
