@@ -3,7 +3,7 @@
     <h2 class="font-medium">
       {{ 'occupation' | translate }}
     </h2>
-    <app-occupations-list class="overflow-y-auto" [selected]="occupation"
+    <app-occupations-list class="overflow-y-auto" [selected]="character.occupation"
       (selectedChange)="onOccupationSelected($event)" />
   </div>
   <div class="flex flex-col p-8 w-full bg-white shadow-md border dark:border-none dark:bg-slate-800 rounded-lg">
@@ -11,20 +11,21 @@
       <h2 class="text-xl font-medium">
         {{ 'traits.positive.title' | translate }}
       </h2>
-      <app-traits-list class="overflow-y-auto pb-4" [traits]="positiveTraitsData" [activeTraits]="positiveTraits"
-        (selected)="onPositiveTraitSelected($event)" />
+      <app-traits-list class="overflow-y-auto pb-4" [traits]="positiveTraits" [activeTraits]="character.traits"
+        (selected)="onTraitSelected($event)" />
     </div>
     <div class="flex flex-col h-1/2">
       <h2 class="text-xl font-medium">
         {{ 'traits.negative.title' | translate }}
       </h2>
-      <app-traits-list class="overflow-y-auto" [traits]="negativeTraitsData" [activeTraits]="negativeTraits"
-        (selected)="onNegativeTraitSelected($event)" />
+      <app-traits-list class="overflow-y-auto" [traits]="negativeTraits" [activeTraits]="character.traits"
+        (selected)="onTraitSelected($event)" />
     </div>
   </div>
   <div class="flex flex-col p-8 w-full bg-white shadow-md border dark:border-none dark:bg-slate-800 rounded-lg">
     <h2 class="text-xl font-medium">
       {{ 'skills.title' | translate }}
     </h2>
+    <app-skills-list />
   </div>
 </div>

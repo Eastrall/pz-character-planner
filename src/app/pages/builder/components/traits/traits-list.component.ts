@@ -1,6 +1,7 @@
 import { NgClass } from "@angular/common";
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { TranslateModule } from "@ngx-translate/core";
+
 import { Trait } from "@shared/types";
 
 @Component({

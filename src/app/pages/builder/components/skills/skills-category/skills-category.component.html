@@ -1,0 +1,11 @@
+<li>
+  <h3 class="underline">{{ "skills.category." + category | lowercase | translate }}</h3>
+  @for (skill of skills; track skill.name) {
+    <div class="flex justify-between w-full rounded-md px-3">
+      <div>{{ skill.name | translate }}</div>
+    </div>
+    <div class="flex items-center">
+
+    </div>
+  }
+</li>

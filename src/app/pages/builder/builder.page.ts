@@ -6,6 +6,12 @@ import { PositiveTraits } from "@data/traits-positive";
 import { NegativeTraits } from "@data/traits-negative";
 import { OccupationListComponent } from "./components/occupation";
 import { TraitsListComponent } from "./components/traits";
+import { SkillsListComponent } from "./components/skills";
+
+type Character = {
+  occupation: Occupation | null,
+  traits: Trait[]
+};
 
 @Component({
   selector: 'app-builder-page',
@@ -14,27 +20,31 @@ import { TraitsListComponent } from "./components/traits";
   imports: [
     TranslateModule,
     OccupationListComponent,
-    TraitsListComponent
+    TraitsListComponent,
+    SkillsListComponent
   ]
 })
 export class BuilderPage {
-  public readonly positiveTraitsData: Trait[] = PositiveTraits;
-  public readonly negativeTraitsData: Trait[] = NegativeTraits;
-
-  public occupation: Occupation | null = null;
-  public positiveTraits: Trait[] = [];
-  public negativeTraits: Trait[] = [];
+  public readonly positiveTraits: Trait[] = PositiveTraits;
+  public readonly negativeTraits: Trait[] = NegativeTraits;
+  public readonly character: Character = {
+    occupation: null,
+    traits: []
+  };
 
   public onOccupationSelected(occupation: Occupation): void {
     console.log(occupation);
-    this.occupation = occupation;
+    this.character.occupation = occupation;
   }
 
-  public onPositiveTraitSelected(trait: Trait): void {
+  public onTraitSelected(trait: Trait): void {
     console.log(trait);
-  }
-
-  public onNegativeTraitSelected(trait: Trait): void {
-    console.log(trait);
+    if (this.character.traits.includes(trait)) {
+      const traitIndex: number = this.character.traits.findIndex(x => x.id == trait.id);
+      this.character.traits.splice(traitIndex, 1);
+    }
+    else {
+      this.character.traits.push(trait);
+    }
   }
 }
